@@ -1,0 +1,63 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Shop Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h2>SHOPPING.UZ</h2>
+  
+        <div class="select-box">
+          <div class="options-container">
+
+          </div>
+  
+          <div class="selected">
+            Select Phone
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="logo">
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+</header>
+
+<nav>
+    <div class="banner">
+            <img src="../static/image/banner.webp" alt="">
+    </div>
+</nav>
+{% block content %}
+<section>
+    <h2 style="color: pink; padding-top: 50px;">Products</h2>
+
+    
+<div class="section">
+    {% for product in products %}
+    <div class="card">
+        <i class="fa-regular fa-heart"></i>
+        <img style="height: 220px;" src="{{ product.image.url }}" alt="">
+        <div class="product">
+            <h3>{{ product.name }}</h3>
+            <h3 style="color: rgb(1, 75, 75);">{{ product.money }}$</h3>
+        </div>
+        <i style="margin-top: 20px; color:yellow;" class="fa-solid fa-star">{{ product.star }}</i>
+    </div>
+    {% endfor %}
+</div>
+</section>
+<footer></footer>
+{% endblock %}
+      <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
