@@ -1,0 +1,50 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Shop Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h2><a style="text-decoration: none; color: pink;" href="{% url 'base' %}">SHOPPING.UZ</a></h2>
+  
+        <div class="select">
+          <select name="links" size="1" onchange="window.location.href=this.value;">
+             <option selected disabled>Select Category</option>
+             <option value="{% url 'iphones' %}">iPhone</option>
+             <option value="{% url 'nokias' %}"><a href="">Nokia</a></option>
+             <option value="{% url 'redmis' %}"><a href="">Redmi</a></option>
+             <option value="{% url 'others' %}"><a href="">Others...</a></option>
+          </select>
+       </div>
+      </div>
+      <div class="logo">
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+</header>
+{% block content %}
+<nav>
+    <div class="banner">
+            <img src="../static/image/all_banner.jfif" alt="">
+    </div>
+</nav>
+
+
+<article>
+  <h1>Select Category <i class="fa-solid fa-arrow-turn-up"></i></h1>
+</article>
+
+
+{% endblock content %}
+<footer></footer>
+      <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

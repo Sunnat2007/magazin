@@ -3,4 +3,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-admin.site.register(Product)
+admin.site.register(Iphone)
+admin.site.register(Nokia)
+admin.site.register(Redmi)
+admin.site.register(Others)

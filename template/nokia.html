@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+<nav>
+    <div class="banner">
+            <img src="../static/image/nokia banner.jfif" alt="">
+    </div>
+</nav>
+<section>
+    <h2 style="color: pink; padding-top: 50px;">Products</h2>
+
+    
+<div class="section">
+    {% for nokia in nokias %}
+    <a href="{{ nokia.get_absolute_url }}">
+    <div class="card">
+        <i class="fa-regular fa-heart"></i>
+        <img style="height: 220px;" src="{{ nokia.image.url }}" alt="">
+        <div class="product">
+            <h3>{{ nokia.name }}</h3>
+            <h3 style="color: rgb(1, 75, 75);">{{ nokia.money }}$</h3>
+        </div>
+        <i style="margin-top: 20px; color:yellow;" class="fa-solid fa-star">{{ nokia.star }}</i>
+    </div>
+    {% endfor %}
+</div>
+</a>
+</section>
+{% endblock content %}

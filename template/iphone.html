@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+<nav>
+    <div class="banner">
+            <img src="../static/image/banner.webp" alt="">
+    </div>
+</nav>
+<section>
+    <h2 style="color: pink; padding-top: 50px;">Products</h2>
+
+    
+<div class="section">
+    {% for iphone in iphones %}
+    <a href="{{ iphone.get_absolute_url }}">
+    <div class="card">
+        <i class="fa-regular fa-heart"></i>
+        <img style="height: 220px;" src="{{ iphone.image.url }}" alt="">
+        <div class="product">
+            <h3>{{ iphone.name }}</h3>
+            <h3 style="color: rgb(1, 75, 75);">{{ iphone.money }}$</h3>
+        </div>
+        <i style="margin-top: 20px; color:yellow;" class="fa-solid fa-star">{{ iphone.star }}</i>
+    </div>
+    {% endfor %}
+</div>
+</a>
+</section>
+{% endblock content %}
